@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Work with @hbc",
+  "version": "0.0.1",
+  "description": "如果你工作开心你就拍拍手",
+  "permissions": [
+    "tabs",
+    "history",
+    "clipboardRead",
+    "<all_urls>"
+  ]
+}
