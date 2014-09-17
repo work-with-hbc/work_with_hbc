@@ -15,5 +15,3 @@ Let's work with [@hbc](https://github.com/bcho)!
 ## License
 
 [No License](http://choosealicense.com/licenses/no-license/)
-
-Copyright 2014 hbc
