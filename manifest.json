@@ -8,5 +8,28 @@
     "history",
     "clipboardRead",
     "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "background_scripts/main.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "bower_components/mousetrap/mousetrap.min.js",
+        "lib/utils.js",
+        "lib/keyboard.js",
+        "content_scripts/command_omnibox/main.js",
+        "content_scripts/main.js"
+      ],
+      "css": [
+        "content_scripts/style.css",
+        "content_scripts/command_omnibox/style.css"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
   ]
 }

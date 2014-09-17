@@ -1,0 +1,64 @@
+/*
+ * UI style.
+ */
+
+/*
+ * Content
+ *
+ * Reset
+ */
+
+
+/*
+ * Reset
+ *
+ * Avoid page style mess up our style by adding `wwh-reset` class.
+ */
+.wwh-reset,
+div.wwh-reset,
+span.wwh-reset,
+table.wwh-reset,
+a.wwh-reset,
+a:visited.wwh-reset,
+a:link.wwh-reset,
+a:hover.wwh-reset,
+td.wwh-reset,
+tr.wwh-reset {
+  background: none;
+  border: none;
+  bottom: auto;
+  box-shadow: none;
+  color: black;
+  cursor: auto;
+  display: inline;
+  float: none;
+  font-family : "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: inherit;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: auto;
+  left: auto;
+  letter-spacing: 0;
+  line-height: 100%;
+  margin: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  padding: 0;
+  position: static;
+  right: auto;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  top: auto;
+  vertical-align: baseline;
+  white-space: normal;
+  width: auto;
+  z-index: 99999999;
+}
+

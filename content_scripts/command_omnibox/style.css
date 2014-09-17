@@ -1,0 +1,75 @@
+/*
+ * Command Omnibox Style
+ */
+
+#command-omnibox {
+  display: block;
+  position: fixed;
+  width: 80%;
+  min-width: 400px;
+  top: 70px;
+  left: 50%;
+  margin: 0 0 0 -40%;
+  font-family: sans-serif;
+
+  background: #f1f1f1;
+  text-align: left;
+  border-radius: 4px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
+  border: 1px solid #aaa;
+  z-index: 99999999;
+}
+
+#command-omnibox ol,
+#command-omnibox ul {
+  list-style: none;
+  display: block;
+}
+
+#command-omnibox ul {
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+  list-style: none;
+  padding: 10px 0;
+  padding-top: 0;
+}
+
+#command-omnibox li {
+  border-bottom: 1px solid #ddd;
+  line-height: 1.1em;
+  padding: 7px 10px;
+  font-size: 16px;
+  color: black;
+  position: relative;
+  display: list-item;
+  margin: auto;
+}
+
+#command-omnibox li:last-of-type {
+  border-bottom: none;
+}
+
+
+#command-omnibox input {
+  color: #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  height: 34px;
+  margin-bottom: 0;
+  padding: 4px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #E8E8E8;
+  box-shadow: #444 0px 0px 1px;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
+
+#command-omnibox .search {
+  display: block;
+  padding: 10px;
+  background-color: #F1F1F1;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 1px solid #C6C9CE;
+}
