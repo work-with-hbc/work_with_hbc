@@ -19,6 +19,8 @@ CommandOmnibox =
   commands: []
 
   init: (@keyboard) ->
+    CommandProxy.init()
+
     @keyboard.bind 'alt+c', (e) =>
       @activate()
 
@@ -49,7 +51,8 @@ CommandOmnibox =
     # Check remains input.
     @parseCommand()
 
-    Command.execute @commands, @ui.getInput()
+    CommandProxy.execute @commands, @ui.getInput()
+
     @resetCommands()
 
     @deactivate()
@@ -69,7 +72,7 @@ CommandOmnibox =
   parseCommand: ->
     parts = @ui.getInput().split ' '
     
-    return unless Command.has parts[0]
+    return unless CommandProxy.has parts[0]
 
     command = parts.pop()
     @commands.push command
@@ -127,31 +130,30 @@ class OminiboxUI
     @input.value
 
 
-Command =
-  definedCommand: {}
-  
-  define: (name, callback) ->
-    @definedCommand[name] = callback
-    @
+CommandProxy =
 
-  get: (name) ->
-    @definedCommand[name]
+  # Commands list.
+  commands: []
+
+  # Ask for all commands.
+  getCommandsRequest: 'command.list'
+
+  # Execute a command.
+  executeCommandRequest: 'command.execute'
+
+  init: ->
+    Message.send @getCommandsRequest, {}, (commands) =>
+      @commands = commands
 
   has: (name) ->
-    @definedCommand[name]?
+    (@commands.lastIndexOf name) != -1
 
-  execute: (names, params) ->
-    names = [names] unless names instanceof Array
-
-    rv = null
-    for name in names
-      command = @get name
-      # TODO handle error
-      return null unless command?
-      rv = params = command.apply params
-
-    rv
+  execute: (commands, params) ->
+    payload =
+      commands: commands
+      params: params
+    Message.send @executeCommandRequest, payload, (result) ->
+      console.debug "command execute result: #{result}"
 
 
 root.CommandOmnibox = CommandOmnibox
-root.Command = Command

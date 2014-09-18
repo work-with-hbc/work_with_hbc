@@ -11,6 +11,8 @@
   ],
   "background": {
     "scripts": [
+      "lib/message/main.js",
+      "background_scripts/command/main.js",
       "background_scripts/main.js"
     ]
   },
@@ -21,6 +23,7 @@
         "bower_components/mousetrap/mousetrap.min.js",
         "lib/utils.js",
         "lib/keyboard.js",
+        "lib/message/main.js",
         "content_scripts/command_omnibox/main.js",
         "content_scripts/main.js"
       ],
