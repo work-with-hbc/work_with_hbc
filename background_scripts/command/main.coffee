@@ -45,10 +45,11 @@ Command =
 
     rv = null
     for name in names
+      console.debug "command: running #{name} with #{params}"
       command = @get name
       # TODO handle error
       return null unless command?
-      rv = params = command.apply params
+      rv = params = command params
 
     rv
 

@@ -6,12 +6,17 @@
   "permissions": [
     "tabs",
     "history",
+    "alarms",
+    "notifications",
     "clipboardRead",
     "<all_urls>"
   ],
   "background": {
     "scripts": [
+      "bower_components/datejs/build/date.js",
       "lib/message/main.js",
+      "background_scripts/alarm/main.js",
+      "background_scripts/notification/main.js",
       "background_scripts/command/main.js",
       "background_scripts/main.js"
     ]

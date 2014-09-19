@@ -51,7 +51,7 @@ CommandOmnibox =
     # Check remains input.
     @parseCommand()
 
-    CommandProxy.execute @commands, @ui.getInput()
+    CommandProxy.execute @commands, @ui.getInput().trim()
 
     @resetCommands()
 
@@ -70,8 +70,8 @@ CommandOmnibox =
   # Parse sub command from input value.
   # Returns new command when found.
   parseCommand: ->
-    parts = @ui.getInput().split ' '
-    
+    parts = @ui.getInput().trim().split ' '
+
     return unless CommandProxy.has parts[0]
 
     command = parts.pop()
