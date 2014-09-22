@@ -18,10 +18,8 @@ Alarm =
   set: (after, callback) ->
     alarmName = @generateName()
     alarmInfo =
-      # Datetime to ms.
-      when: (Date.parse after).getTime()
+      when: (Utils.humanizeDatetimeOffset after) + Date.now()
 
-    Date.parse after - Date.parse 'now'
     @setCallback alarmName, callback
     
     chrome.alarms.create alarmName, alarmInfo

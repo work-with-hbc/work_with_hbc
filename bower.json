@@ -26,7 +26,6 @@
     "tests"
   ],
   "dependencies": {
-    "mousetrap": "~1.4.6",
-    "datejs": "~1.0.0-rc1"
+    "mousetrap": "~1.4.6"
   }
 }

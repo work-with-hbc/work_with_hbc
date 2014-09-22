@@ -13,7 +13,7 @@
   ],
   "background": {
     "scripts": [
-      "bower_components/datejs/build/date.js",
+      "lib/utils.js",
       "lib/message/main.js",
       "background_scripts/alarm/main.js",
       "background_scripts/notification/main.js",
