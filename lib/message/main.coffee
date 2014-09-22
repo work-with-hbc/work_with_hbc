@@ -12,10 +12,10 @@ Message =
 
       # TODO handle missing event
       if not @events[event]?
-        console.log "Unable to find handler for event: #{event}"
+        Logger.error "unable to find handler for event: #{event}"
         return
 
-      console.debug "Handling event: #{event}"
+      Logger.debug "handling event: #{event}"
       @events[event] payloads, makeRes
 
   send: (event, payloads, callback) ->

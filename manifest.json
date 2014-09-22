@@ -14,6 +14,7 @@
   "background": {
     "scripts": [
       "lib/utils.js",
+      "lib/logger.js",
       "lib/message/main.js",
       "background_scripts/alarm/main.js",
       "background_scripts/notification/main.js",
@@ -27,6 +28,7 @@
       "js": [
         "bower_components/mousetrap/mousetrap.min.js",
         "lib/utils.js",
+        "lib/logger.js",
         "lib/keyboard.js",
         "lib/message/main.js",
         "content_scripts/command_omnibox/main.js",

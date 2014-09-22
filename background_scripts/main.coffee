@@ -11,7 +11,7 @@ Command.init()
 # Commands
 
 Command.define 'ping', ->
-  console.log 'pong'
+  Logger.info 'pong'
 
 
 # set: pass params to next command.

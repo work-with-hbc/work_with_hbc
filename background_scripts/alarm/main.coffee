@@ -12,7 +12,7 @@ Alarm =
     @clearCallbacks()
     
     chrome.alarms.onAlarm.addListener (alarm) =>
-      console.debug "alarm wake up: #{alarm.name}"
+      Logger.debug "alarm wake up: #{alarm.name}"
       @executeCallback alarm.name
 
   set: (after, callback) ->

@@ -13,7 +13,7 @@ Notification =
       title: 'Work with hbc'
     
     chrome.notifications.create '', options, (id) ->
-      console.debug "notification #{id} created"
+      Logger.debug "notification #{id} created"
 
 
 root.Notification = Notification
