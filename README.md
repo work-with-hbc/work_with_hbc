@@ -6,10 +6,11 @@ Let's work with [@hbc](https://github.com/bcho)!
 
 ## Components
 
-- TODO list
-- Weekly report
-- Homebrew password solution
-- Budget control
+- [x] Alarm
+- [ ] TODO list
+- [ ] Weekly report
+- [ ] Homebrew password solution
+- [ ] Budget control
 
 
 ## License
