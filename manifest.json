@@ -13,6 +13,7 @@
   ],
   "background": {
     "scripts": [
+      "node_modules/annie-coffee/dist/annie.js",
       "lib/utils.js",
       "lib/logger.js",
       "lib/message/main.js",
