@@ -6,3 +6,4 @@ before_script:
     - npm install -g coffee-script
     - npm install -g bower
     - bower install -f
+    - coffee -c .
