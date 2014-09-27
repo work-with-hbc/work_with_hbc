@@ -1,5 +1,6 @@
 # Work with @hbc
 
+[![Build Status](https://travis-ci.org/work-with-hbc/work_with_hbc.svg?branch=master)](https://travis-ci.org/work-with-hbc/work_with_hbc)
 
 Let's work with [@hbc](https://github.com/bcho)!
 
