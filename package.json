@@ -14,7 +14,7 @@
     "should": "^4.0.4"
   },
   "scripts": {
-    "test": "cake test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
