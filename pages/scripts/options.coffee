@@ -6,11 +6,11 @@ annieSettings =
 
   save: ($el) ->
     @set$El $el
-    Sync.set @baseUrlKey, @getBaseUrlValue()
+    Annie.settings.saveBaseUrl @getBaseUrlValue()
 
   restore: ($el) ->
     @set$El $el
-    Sync.get @baseUrlKey, (url) => @setBaseUrlValue(url)
+    Annie.settings.getBaseUrl (url) => @setBaseUrlValue(url)
 
   set$El: (@$el) ->
 

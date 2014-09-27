@@ -18,6 +18,7 @@
       "lib/utils.js",
       "lib/logger.js",
       "lib/message/main.js",
+      "background_scripts/annie/main.js",
       "background_scripts/alarm/main.js",
       "background_scripts/notification/main.js",
       "background_scripts/command/main.js",

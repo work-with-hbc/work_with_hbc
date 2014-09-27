@@ -2,6 +2,7 @@ root = exports ? window
 
 # Components Setup
 
+Annie.init()
 Alarm.init()
 Notification.init()
 Message.init()
