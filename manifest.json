@@ -9,6 +9,7 @@
     "alarms",
     "notifications",
     "clipboardRead",
+    "storage",
     "<all_urls>"
   ],
   "background": {
