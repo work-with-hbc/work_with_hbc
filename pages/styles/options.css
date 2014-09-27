@@ -1,0 +1,65 @@
+/*
+ * Options Page CSS Theme
+ */
+
+/*
+ * Content
+ *
+ * - Page
+ * - Main Block
+ * - Settings Block
+ * - Misc
+ */
+
+
+/*
+ * Page
+ */
+body {
+  background-color: #efefef;
+}
+
+
+/*
+ * Main Block
+ */
+.main {
+  width: 35%;
+  margin: 2% auto 0;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+
+/*
+ * Settings Block
+ */
+.settings-block {
+  padding: 1.2em 1em .5em;
+  margin: .5em 0 .66em;
+  border-top: 1px solid #efefef;
+}
+
+.settings-block:first-child {
+  border-top: 0px solid transparent;
+  margin-top: 0;
+}
+
+.settings-title h1 {
+  margin: 0.25em 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  text-align: center;
+}
+
+
+/*
+ * Misc
+ */
+.pull-right {
+  float: right;
+}
+
+.pure-button-small {
+  font-size: 65%;
+}

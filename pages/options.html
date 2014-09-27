@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[work w/ hbc] options</title>
+    <link rel="stylesheet" href="../bower_components/pure/pure.css">
+    <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+    <div class="main">
+        <div class="main-wrap pure-g">
+            <section class="settings-block pure-u-1" data-settings-group="annie">
+                <header class="settings-title">
+                    <h1>Annie</h1>
+                </header>
+                <form class="pure-form pure-g">
+                    <div class="pure-u-1">
+                        <label for="base-url">API Base Url:</label>
+                        <input class="pure-input-1" type="text" name="base-url" placeholder="API base url">
+                    </div>
+                </form>
+            </section>
+            <section class="settings-block pure-u-1" data-settings-group="confirm">
+                <div class="buttons-group pull-right">
+                    <button class="pure-button pure-button-small pure-button-primary" name="save">Save</button>
+                    <button class="pure-button pure-button-small" name="discard">Discard</button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../lib/logger.js"></script>
+<script src="../lib/sync.js"></script>
+<script src="scripts/options.js"></script>
+</html>
