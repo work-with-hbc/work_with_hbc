@@ -17,6 +17,7 @@
       "node_modules/annie-coffee/dist/annie.js",
       "lib/utils.js",
       "lib/logger.js",
+      "lib/sync.js",
       "lib/message/main.js",
       "background_scripts/annie/main.js",
       "background_scripts/alarm/main.js",
