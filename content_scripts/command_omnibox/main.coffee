@@ -154,6 +154,9 @@ CommandProxy =
       params: params
     Message.send @executeCommandRequest, payload, (result) ->
       console.debug "command execute result: #{result}"
+
+      if not result?
+        result = "Unknown command: #{payload.commands} #{payload.params}"
       HUD.activate result
 
 
