@@ -42,7 +42,7 @@ CommandOmnibox =
 
   bindKeyboardEvents: ->
     for key, handler of @keyboardEventKeys
-      @keyboard.bind key, this[handler].bind(@)
+      @keyboard.bind key, @[handler].bind @
 
   unbindKeyboardEvents: ->
     @keyboard.unbind key for key, _ of @keyboardEventKeys
@@ -105,7 +105,7 @@ class OminiboxUI
         <ul class="wwh-reset"></ul>
       </div>
       ''')
-    @box.style.display = "none"
+    @box.style.display = 'none'
     document.body.appendChild(@box)
 
     @input = document.querySelector("#command-omnibox input")
@@ -154,6 +154,7 @@ CommandProxy =
       params: params
     Message.send @executeCommandRequest, payload, (result) ->
       console.debug "command execute result: #{result}"
+      HUD.activate result
 
 
 root.CommandOmnibox = CommandOmnibox

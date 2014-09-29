@@ -36,11 +36,13 @@
         "lib/keyboard.js",
         "lib/message/main.js",
         "content_scripts/command_omnibox/main.js",
+        "content_scripts/hud/main.js",
         "content_scripts/main.js"
       ],
       "css": [
         "content_scripts/style.css",
-        "content_scripts/command_omnibox/style.css"
+        "content_scripts/command_omnibox/style.css",
+        "content_scripts/hud/style.css"
       ],
       "run_at": "document_end",
       "all_frames": true

@@ -13,6 +13,8 @@ Command.init()
 
 Command.define 'ping', ->
   Logger.info 'pong'
+  
+  'pong'
 
 
 # set: pass params to next command.
@@ -29,3 +31,5 @@ Command.define 'set', (params) -> params
 Command.define 'alarm', (time) ->
   Alarm.set time, ->
     Notification.make 'Time is up!'
+  
+  'Alarm scheduled!'
