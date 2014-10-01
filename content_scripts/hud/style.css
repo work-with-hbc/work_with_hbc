@@ -10,9 +10,9 @@
   padding: 15px 25px;
   transform: translate(-50%, -50%);
 
-  font-family: sans-serif;
+  font-family: Monaco;
   text-align: center;
-  color: #fff;
+  color: #c6e9f5;
   box-shadow: 1px 0 1px 0 rgba(0, 0, 0, 0.22);
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.62);
