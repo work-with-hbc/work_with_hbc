@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Command Ominibox</title>
+    <link rel="stylesheet" href="../content_scripts/command_omnibox/style.css">
+</head>
+<body>
+    <div class="wwh-overlay">
+        <div id="wwh-command-omnibox" class="wwh-reset">
+            <div class="wwh-reset wwh-search">
+              <input type="text" class="wwh-reset mousetrap" autofocus>
+            </div>
+            <ul class="wwh-hints wwh-reset">
+                <li class="wwh-hints-headline">Alarm: set an alarm.</li>
+                <li>
+                    <span class="wwh-hints-hl-keyword-command wwh-hints-hl">alarm</span> <span class="wwh-hints-hl-keyword-reserved">for</span> <span class="wwh-hints-hl-input">____</span> <span class="wwh-hints-hl-keyword-reserved">minutes</span>
+                </li>
+                <li>
+                    <span class="wwh-hints-hl-keyword-command wwh-hints-hl">alarm</span> <span class="wwh-hints-hl-keyword-reserved">at</span> <span class="wwh-hints-hl-input">____</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

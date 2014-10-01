@@ -2,73 +2,103 @@
  * Command Omnibox Style
  */
 
-#command-omnibox {
+/*
+ * Content
+ *
+ * - Overlay
+ * - Omnibox
+ * - Search Input
+ * - Hints
+ */
+
+/*
+ * Overlay
+ */
+.wwh-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: 99999998;
+}
+
+/*
+ * Omnibox
+ */
+#wwh-command-omnibox {
   display: block;
   position: fixed;
   width: 80%;
-  min-width: 400px;
-  top: 70px;
+  top: 30%;
   left: 50%;
   margin: 0 0 0 -40%;
-  font-family: sans-serif;
-  background: #f1f1f1;
-  text-align: left;
-  border-radius: 4px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
-  border: 1px solid #aaa;
+  
   z-index: 99999999;
+  text-align: left;
+  border: 2px solid #81d8db;
+  border-radius: 4px;
 }
 
-#command-omnibox ol,
-#command-omnibox ul {
+/*
+ * Search
+ */
+#wwh-command-omnibox input {
+  font-family: Monaco;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 0;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  color: #99edf0;
+}
+
+#wwh-command-omnibox .wwh-search {
+  display: block;
+  padding: 5px 7px;
+}
+
+/*
+ * Hints
+ */
+.wwh-hints {
   list-style: none;
   display: block;
-}
-
-#command-omnibox ul {
-  background-color: white;
   border-radius: 0 0 4px 4px;
   list-style: none;
   padding: 10px 0;
   padding-top: 0;
 }
 
-#command-omnibox li {
-  border-bottom: 1px solid #ddd;
+.wwh-hints li {
   line-height: 1.1em;
   padding: 7px 10px;
   font-size: 16px;
-  color: black;
   position: relative;
   display: list-item;
   margin: auto;
+  color: #99edf0;
+  font-family: Monaco;
 }
 
-#command-omnibox li:last-of-type {
-  border-bottom: none;
+.wwh-hints li.wwh-hints-headline {
+  margin-bottom: 1.5%;
+  font-size: 2em;
 }
 
-
-#command-omnibox input {
+.wwh-hints .wwh-hints-hl{
+  padding: 2px 4px;
+  border-radius: 2px;
+  background-color: #c6e9f5;
   color: #000;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  height: 34px;
-  margin-bottom: 0;
-  padding: 4px;
-  background-color: white;
-  border-radius: 3px;
-  border: 1px solid #E8E8E8;
-  box-shadow: #444 0px 0px 1px;
-  width: 100%;
-  outline: none;
-  box-sizing: border-box;
+  font-size: 1.1em;
 }
 
-#command-omnibox .search {
-  display: block;
-  padding: 10px;
-  background-color: #F1F1F1;
-  border-radius: 4px 4px 0 0;
-  border-bottom: 1px solid #C6C9CE;
+.wwh-hints .wwh-hints-hl-keyword-reserved,
+.wwh-hints .wwh-hints-hl-keyword-command {
+  font-weight: bold;
 }
