@@ -98,19 +98,20 @@ class OminiboxUI
   initDom: ->
     @box = Utils.createElementFromHtml(
       '''
-      <div id="command-omnibox" class="wwh-reset">
-        <div class="wwh-reset search">
-          <input type="text" class="wwh-reset mousetrap">
+      <div class="wwh-overlay">
+        <div id="wwh-command-omnibox" class="wwh-reset">
+          <div class="wwh-reset wwh-search">
+              <input type="text" class="wwh-reset mousetrap">
+          </div>
         </div>
-        <ul class="wwh-reset"></ul>
       </div>
       ''')
     @box.style.display = 'none'
     document.body.appendChild(@box)
 
-    @input = document.querySelector("#command-omnibox input")
-    @completionList = document.querySelector('#command-omnibox ul')
-    @completionList.style.display = 'none'
+    @input = document.querySelector("#wwh-command-omnibox input")
+    # @completionList = document.querySelector('#command-omnibox ul')
+    # @completionList.style.display = 'none'
 
   show: ->
     @box.style.display = 'block'
