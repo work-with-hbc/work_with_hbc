@@ -13,10 +13,7 @@ CommandOmnibox =
   keyboardEventKeys:
     'esc'   : 'deactivate'
     'enter' : 'executeCommand'
-    'space' : 'splitCommand'
-
-  # Commands sequence.
-  commands: []
+    'space' : 'getCommandDesc'
 
   init: (@keyboard) ->
     CommandProxy.init()
@@ -27,7 +24,6 @@ CommandOmnibox =
   activate: ->
     @showUI()
     @bindKeyboardEvents()
-    @resetCommands()
 
   deactivate: ->
     @hideUI()
@@ -48,37 +44,27 @@ CommandOmnibox =
     @keyboard.unbind key for key, _ of @keyboardEventKeys
 
   executeCommand: ->
-    # Check remains input.
-    @parseCommand()
+    command = @ui.getInput().trim()
+    return unless command?
 
-    CommandProxy.execute @commands, @ui.getInput().trim()
-
-    @resetCommands()
+    CommandProxy.execute command
 
     @deactivate()
 
-  splitCommand: (e) ->
-    if @parseCommand()
-      # TODO remove white space (should be able to stop space press event)
-      e.stopPropagation()
-      true
+  getCommandDesc: ->
+    commands = @parseCommand()
+    return unless commands?
 
-  resetCommands: ->
-    @commands = []
-    @ui.setInput ''
+    @ui.resetDescList()
+    for command in commands
+      CommandProxy.help command.cmd, (cmd, desc) =>
+        return unless desc?
 
-  # Parse sub command from input value.
-  # Returns new command when found.
+        @ui.addDesc cmd, desc
+
+  # Parse command and arguments from user input.
   parseCommand: ->
-    parts = @ui.getInput().trim().split ' '
-
-    return unless CommandProxy.has parts[0]
-
-    command = parts.pop()
-    @commands.push command
-    @ui.setInput (parts.join ' ').trim()
-
-    command
+    CommandLexer.lex @ui.getInput()
 
 
 class OminiboxUI
@@ -103,15 +89,16 @@ class OminiboxUI
           <div class="wwh-reset wwh-search">
               <input type="text" class="wwh-reset mousetrap">
           </div>
+          <ul class="wwh-hints wwh-reset"></ul>
         </div>
       </div>
       ''')
     @box.style.display = 'none'
-    document.body.appendChild(@box)
+    document.body.appendChild @box
 
     @input = document.querySelector("#wwh-command-omnibox input")
-    # @completionList = document.querySelector('#command-omnibox ul')
-    # @completionList.style.display = 'none'
+    @descList = document.querySelector('#wwh-command-omnibox ul')
+    @descList.style.display = 'none'
 
   show: ->
     @box.style.display = 'block'
@@ -121,8 +108,20 @@ class OminiboxUI
     @box.style.display = 'none'
     @input.blur()
 
+    @resetInput()
+    @resetDescList()
+
+  reset: ->
+    @resetInput()
+    @resetDescList()
+
   resetInput: ->
+    return unless @input?
     @input.value = ''
+
+  resetDescList: ->
+    return unless @descList?
+    @descList.innerHTML = ''
 
   setInput: (value) ->
     @input.value = value
@@ -130,6 +129,17 @@ class OminiboxUI
   getInput: ->
     @input.value
 
+  addDesc: (cmd, desc) ->
+    desc = Utils.createElementFromHtml(
+      """
+      <li>
+        <span class="wwh-hints-hl-keyword-command wwh-hints-hl">#{cmd}</span> #{desc}
+      <li>
+      """
+    )
+    @descList.appendChild desc
+
+    @descList.style.display = 'block'
 
 CommandProxy =
 
@@ -138,6 +148,9 @@ CommandProxy =
 
   # Ask for all commands.
   getCommandsRequest: 'command.list'
+
+  # Get help message for a command.
+  getCommandDescription: 'command.help'
 
   # Execute a command.
   executeCommandRequest: 'command.execute'
@@ -149,15 +162,20 @@ CommandProxy =
   has: (name) ->
     (@commands.lastIndexOf name) != -1
 
-  execute: (commands, params) ->
+  help: (name, cb) ->
     payload =
-      commands: commands
-      params: params
-    Message.send @executeCommandRequest, payload, (result) ->
-      console.debug "command execute result: #{result}"
+      command: name
+    Message.send @getCommandDescription, payload, (result) ->
+      Logger.debug "command help result: #{result}"
+
+      cb name, result if result?
+
+  execute: (command) ->
+    Message.send @executeCommandRequest, command, (result) ->
+      Logger.debug "command execute result: #{result}"
 
       if not result?
-        result = "Unknown command: #{payload.commands} #{payload.params}"
+        result = "Unknown command: #{command}"
       HUD.activate result
 
 

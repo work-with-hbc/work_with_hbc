@@ -19,6 +19,7 @@
       "lib/logger.js",
       "lib/sync.js",
       "lib/message/main.js",
+      "lib/command_lexer.js",
       "background_scripts/annie/main.js",
       "background_scripts/alarm/main.js",
       "background_scripts/notification/main.js",
@@ -35,6 +36,7 @@
         "lib/logger.js",
         "lib/keyboard.js",
         "lib/message/main.js",
+        "lib/command_lexer.js",
         "content_scripts/command_omnibox/main.js",
         "content_scripts/hud/main.js",
         "content_scripts/main.js"
