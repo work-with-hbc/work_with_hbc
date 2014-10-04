@@ -1,6 +1,6 @@
 root = exports ? window
 
-# Components Setup
+# ## Components Setup
 
 Annie.init()
 Alarm.init()
@@ -9,7 +9,7 @@ Message.init()
 Command.init()
 
 
-# Commands
+# ## Commands
 
 # ping: ping pong
 #
@@ -17,7 +17,6 @@ Command.init()
 Command.define 'ping', 'you said ping I said pong', (args) -> (input) ->
   msg = [input, args].filter (x) -> x? and x != ''
 
-  console.log msg
   if msg.length == 0
     msg = 'pong'
   else

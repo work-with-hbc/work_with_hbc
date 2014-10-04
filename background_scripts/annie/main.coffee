@@ -14,8 +14,18 @@ AnnieModule =
   thing:
     get: (id, onSuccess, onError) ->
       _Annie.thing.get id, onSuccess, onError
+    getList: (id, onSuccess, onError) ->
+      _Annie.thing.getList id, onSuccess, onError
     store: (thing, onSuccess, onError) ->
       _Annie.thing.store thing, onSuccess, onError
+    storeWithId: (id, thing, onSuccess, onError) ->
+      _Annie.thing.storeWithId id, thing, onSuccess, onError
+    storeList: (things, onSuccess, onError) ->
+      _Annie.thing.storeList things, onSuccess, onError
+    storeListWithId: (id, things, onSuccess, onError) ->
+      _Annie.thing.storeListWithId id, things, onSuccess, onError
+    pushThingToList: (id, thing, onSuccess, onError) ->
+      _Annie.pushThingToList id, thing, onSuccess, onError
 
   # TODO need refactor
   settings:
