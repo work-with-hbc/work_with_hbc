@@ -11,12 +11,15 @@ Message =
       {event: event, payloads: payloads} = req
 
       # TODO handle missing event
-      if not @events[event]?
+      if not @has event
         Logger.error "unable to find handler for event: #{event}"
         return
 
       Logger.debug "handling event: #{event}"
-      @events[event] payloads, makeRes
+      handler payloads, makeRes for handler in @events[event]
+
+  has: (event) ->
+    @events[event]?
 
   send: (event, payloads, callback) ->
     message =
@@ -25,7 +28,10 @@ Message =
     chrome.runtime.sendMessage message, callback
 
   on: (event, action) ->
-    @events[event] = action
+    if not @has event
+      @events[event] = []
+
+    @events[event].push action
 
 
 root.Message = Message

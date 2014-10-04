@@ -7,6 +7,7 @@ Alarm.init()
 Notification.init()
 Message.init()
 Command.init()
+CommandLogger.init Command
 
 
 # ## Commands

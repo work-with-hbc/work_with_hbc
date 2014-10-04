@@ -24,6 +24,7 @@
       "background_scripts/alarm/main.js",
       "background_scripts/notification/main.js",
       "background_scripts/command/main.js",
+      "background_scripts/command/logger.js",
       "background_scripts/main.js"
     ]
   },

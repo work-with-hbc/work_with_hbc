@@ -25,7 +25,7 @@ AnnieModule =
     storeListWithId: (id, things, onSuccess, onError) ->
       _Annie.thing.storeListWithId id, things, onSuccess, onError
     pushThingToList: (id, thing, onSuccess, onError) ->
-      _Annie.pushThingToList id, thing, onSuccess, onError
+      _Annie.thing.pushThingToList id, thing, onSuccess, onError
 
   # TODO need refactor
   settings:
